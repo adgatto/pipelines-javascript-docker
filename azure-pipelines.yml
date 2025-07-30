@@ -19,7 +19,9 @@ variables:
   imagePullSecret: 'aksdemopro6906052-auth'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+#  vmImageName: 'ubuntu-latest'=
+pool:
+  name: SelfHosted
 
   # Name of the new namespace being created to deploy the PR changes.
   k8sNamespaceForPR: 'review-app-$(System.PullRequest.PullRequestId)'
