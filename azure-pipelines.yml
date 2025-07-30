@@ -18,13 +18,13 @@ variables:
   tag: '$(Build.BuildId)'
   imagePullSecret: 'aksdemopro6906052-auth'
 
+  # Name of the new namespace being created to deploy the PR changes.
+  k8sNamespaceForPR: 'review-app-$(System.PullRequest.PullRequestId)'
+
   # Agent VM image name
 #  vmImageName: 'ubuntu-latest'=
 pool:
   name: SelfHosted
-
-  # Name of the new namespace being created to deploy the PR changes.
-  k8sNamespaceForPR: 'review-app-$(System.PullRequest.PullRequestId)'
 
 stages:
 - stage: Build
