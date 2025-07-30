@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: adgattopipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: adgattopipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: adgattopipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: adgattopipelinesjavascriptdocker 
+          image: aksdemopro690.azurecr.io/adgattopipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
